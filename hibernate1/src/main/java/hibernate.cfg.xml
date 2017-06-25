@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.password">password</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+        <property name="hibernate.connection.username">hr</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle8iDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <mapping class="edu.val.dto.oracle.Countries" />
+        <mapping class="edu.val.dto.oracle.Departments" />
+        <mapping class="edu.val.dto.oracle.Jobs" />
+        <mapping class="edu.val.dto.oracle.Registro" />
+        <mapping class="edu.val.dto.oracle.Regions" />
+        <mapping class="edu.val.dto.oracle.Registroautoid" />
+        <mapping class="edu.val.dto.oracle.EmpDetailsView" />
+        <mapping class="edu.val.dto.oracle.Locations" />
+        <mapping class="edu.val.dto.oracle.Employees" />
+        <mapping class="edu.val.dto.oracle.JobHistory" />
+    </session-factory>
+</hibernate-configuration>

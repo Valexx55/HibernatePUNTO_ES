@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="1.0">
+	<!-- con esta anotación RESOURCE_LOCAL está delegando la creación y el mantenimiento 
+		del EntityManager en el código de mi aplicación (concretamente aquí se encargarán 
+		clases de Hibernate) Si hubiera puesto JTA, estaría delegando esa responsabilidad 
+		en el Contenedor/Servidor -->
+
+	<persistence-unit name="unit">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>edu.val.dto.oracle.Regions</class>
+		<class>edu.val.dto.oracle.Countries</class>
+		<class>edu.val.dto.oracle.Departaments</class>
+		<class>edu.val.dto.oracle.EmpDetailsView</class>
+		<class>edu.val.dto.oracle.EmpDetailsViewId</class>
+		<class>edu.val.dto.oracle.Employees</class>
+		<class>edu.val.dto.oracle.Jobs</class>
+		<class>edu.val.dto.oracle.JobHistory</class>
+		<class>edu.val.dto.oracle.JobHistoryId</class>
+		<class>edu.val.dto.oracle.Locations</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle8iDialect" />
+			<property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="hibernate.connection.username" value="hr" />
+			<property name="hibernate.connection.password" value="password" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<!-- <property name="hibernate.id.new_generator_mappings" value="true"></property>-->
+			<!-- <property name="hibernate.id.new_generator_mappings" value="true"/>-->
+		</properties>
+	</persistence-unit>
+</persistence>
